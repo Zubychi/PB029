@@ -14,7 +14,7 @@
             <xs:element name="address" type="address-type" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="phone" type="phone-type" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="email" type="email-type" minOccurs="0" maxOccurs="unbounded"/>
-            <xs:element name="web" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="web" type="url-type" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="personalized-contact" type="personalized-contact-type" minOccurs="0" maxOccurs="unbounded"/>
             <xs:element name="note" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
         </xs:sequence>
@@ -38,15 +38,6 @@
         </xs:sequence>
     </xs:complexType>
 
-    <xs:simpleType name="contact-type">
-        <xs:restriction base="xs:string">
-            <xs:enumeration value="personal"/>
-            <xs:enumeration value="work"/>
-            <xs:enumeration value="academic"/>
-            <xs:enumeration value="other"/>
-        </xs:restriction>
-    </xs:simpleType>
-
     <xs:complexType name="phone-type">
         <xs:sequence>
             <xs:element name="type" type="contact-type"/>
@@ -57,7 +48,7 @@
     <xs:complexType name="email-type">
         <xs:sequence>
             <xs:element name="type" type="contact-type"/>
-            <xs:element name="value" type="xs:string"/>
+            <xs:element name="value" type="email-value-type"/>
         </xs:sequence>
     </xs:complexType>
 
@@ -67,4 +58,25 @@
             <xs:element name="value" type="xs:string"/>
         </xs:sequence>
     </xs:complexType>
+
+    <xs:simpleType name="email-value-type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="url-type">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="https?://[^\s/$.?#].[^\s]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="contact-type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="personal"/>
+            <xs:enumeration value="work"/>
+            <xs:enumeration value="academic"/>
+            <xs:enumeration value="other"/>
+        </xs:restriction>
+    </xs:simpleType>
 </xs:schema>
