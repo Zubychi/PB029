@@ -1,5 +1,5 @@
 <contacts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="contacts.xsd">
+    xsi:noNamespaceSchemaLocation="..\contacts.xsd">
 
     <record>
         <name>
