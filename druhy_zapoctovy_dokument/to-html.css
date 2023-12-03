@@ -1,9 +1,0 @@
-contacts {
-    background-color: #d16f93;
-    font-family: sans-serif, serif;
-    color: #000000;
-}
-
-contacts > record {
-    margin: auto;
-}
