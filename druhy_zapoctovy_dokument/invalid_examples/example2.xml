@@ -1,0 +1,44 @@
+<!-- wrong email, missing @ and wrong url-->
+
+<contacts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="..\contacts.xsd">
+
+    <record>
+        <name>
+            <lastname>Rudincová</lastname>
+            <firstname>Denisa</firstname>
+            <middlename>Cecília</middlename>
+        </name>
+
+
+        <address>
+            <street>Fialková</street>
+            <house-number>42</house-number>
+            <zipcode>424242</zipcode>
+            <city>Lentilkovo</city>
+            <country>Tvoja mamka</country>
+        </address>
+
+        <phone>
+            <type>not</type>
+            <value>+4242424242424242</value>
+        </phone>
+
+        <email>
+            <type>academic</type>
+            <value>524996mail.muni.cz</value>
+        </email>
+
+        <web>htt://tvojamamkak</web>
+
+        <personalized-contact>
+            <service>Discord</service>
+            <value>-</value>
+        </personalized-contact>
+
+        <note>Dopísala pesničku, na ktorej pracovala rok. Yay.</note>
+        <note>Posunul sa jej spánkový režim a chodí spať o tretej. Not yay.</note>
+        <note>Tri týždne dozadu začala pozerať Agents of Shield a už je na šiestej sérii.</note>
+    </record>
+
+</contacts>
