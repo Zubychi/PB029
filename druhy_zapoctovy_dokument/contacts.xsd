@@ -1,0 +1,70 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+    <xs:element name="contacts">
+        <xs:complexType>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="record" type="record-type"/>
+            </xs:choice>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="record-type">
+        <xs:sequence>
+            <xs:element name="name" type="name-type"/>        
+            <xs:element name="address" type="address-type" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="phone" type="phone-type" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="email" type="email-type" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="web" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="personalized-contact" type="personalized-contact-type" minOccurs="0" maxOccurs="unbounded"/>
+            <xs:element name="note" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="name-type">
+        <xs:sequence>
+            <xs:element name="lastname" type="xs:string"/>
+            <xs:element name="firstname" type="xs:string"/>
+            <xs:element name="middlename" type="xs:string" minOccurs="0"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="address-type">
+        <xs:sequence>
+            <xs:element name="street" type="xs:string"/>
+            <xs:element name="house-number" type="xs:string"/>
+            <xs:element name="zipcode" type="xs:string"/>
+            <xs:element name="city" type="xs:string"/>
+            <xs:element name="country" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:simpleType name="contact-type">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="personal"/>
+            <xs:enumeration value="work"/>
+            <xs:enumeration value="academic"/>
+            <xs:enumeration value="other"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="phone-type">
+        <xs:sequence>
+            <xs:element name="type" type="contact-type"/>
+            <xs:element name="value" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="email-type">
+        <xs:sequence>
+            <xs:element name="type" type="contact-type"/>
+            <xs:element name="value" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="personalized-contact-type">
+        <xs:sequence>
+            <xs:element name="service" type="xs:string"/>
+            <xs:element name="value" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:schema>
