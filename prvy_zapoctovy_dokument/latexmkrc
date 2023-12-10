@@ -1,0 +1,1 @@
+$makeindex = "texindy %O -I latex --language slovak-large --codepage utf8 -o %D %S";
