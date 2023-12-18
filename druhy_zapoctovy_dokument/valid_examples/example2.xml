@@ -1,5 +1,5 @@
 <contacts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="..\contacts.xsd">
+    xsi:noNamespaceSchemaLocation="../contacts.xsd">
 
     <record>
         <name>
@@ -13,12 +13,12 @@
             <house-number>42</house-number>
             <zipcode>424242</zipcode>
             <city>Lentilkovo</city>
-            <country>Tvoja mamka</country>
+            <country>Slovensko</country>
         </address>
 
         <phone>
             <type>personal</type>
-            <value>+4242424242424242</value>
+            <value>+424242424242</value>
         </phone>
 
         <email>
@@ -36,16 +36,16 @@
             <value>denisa.rudinec@gmail.com</value>
         </email>
 
-        <web>https://tvojamamka.sk</web>
+        <web>https://idkkflmln.sk</web>
 
         <personalized-contact>
             <service>Discord</service>
             <value>-</value>
         </personalized-contact>
 
-        <note>Dopísala pesničku, na ktorej pracovala rok. Yay.</note>
-        <note>Posunul sa jej spánkový režim a chodí spať o tretej. Not yay.</note>
-        <note>Tri týždne dozadu začala pozerať Agents of Shield a už je na šiestej sérii.</note>
+        <note>Poznámka č. 1</note>
+        <note>Poznámka č. 2</note>
+        <note>Poznámka č. 3</note>
     </record>
 
 </contacts>

@@ -1,5 +1,5 @@
 <contacts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="..\contacts.xsd">
+    xsi:noNamespaceSchemaLocation="../contacts.xsd">
 
     <record>
         <name>
@@ -13,12 +13,12 @@
             <house-number>42</house-number>
             <zipcode>424242</zipcode>
             <city>Lentilkovo</city>
-            <country>Tvoja mamka</country>
+            <country>Slovensko</country>
         </address>
 
         <phone>
             <type>personal</type>
-            <value>+4242424242424242</value>
+            <value>+424242424242</value>
         </phone>
 
         <email>
@@ -36,16 +36,16 @@
             <value>denisa.rudinec@gmail.com</value>
         </email>
 
-        <web>https://tvojamamka.sk</web>
+        <web>https://idkkflmln.sk</web>
 
         <personalized-contact>
             <service>Discord</service>
-            <value>-</value>
+            <value>addsadsakjdsakjkja</value>
         </personalized-contact>
 
-        <note>Dopísala pesničku, na ktorej pracovala rok. Yay.</note>
-        <note>Posunul sa jej spánkový režim a chodí spať o tretej. Not yay.</note>
-        <note>Tri týždne dozadu začala pozerať Agents of Shield a už je na ~~šiestej~~ siedmej sérii.</note>
+        <note>Poznámka č. 1</note>
+        <note>Poznámka č. 2</note>
+        <note>Not an empty note</note>
         <note>After the Battle of New York, the world has changed. It now knows not only about the Avengers, but also the powerful menaces that require those superheroes and more to face them. In response, Phil Coulson of the Strategic Homeland Intervention, Enforcement and Logistics Division assembles an elite covert team to find and deal with these threats wherever they are found. With a world rapidly becoming more bizarre and dangerous than ever before as the supervillains arise, these agents of S.H.I.E.L.D. are ready to take them on.</note>
     </record>
 
@@ -71,12 +71,17 @@
             <country>China</country>
         </address>
 
+        <personalized-contact>
+            <service>Facebook</service>
+            <value>Daisy Quake Johnson</value>
+        </personalized-contact>
+
         <note>Also known as Quake, which I totally didn't read as Quack the first time I saw it.</note>
     </record>
 
     <record>
         <name>
-            <lastname>Johnson</lastname>
+            <lastname>Zabo</lastname>
             <firstname>Calvin</firstname>
         </name>
 
@@ -87,6 +92,12 @@
             <city>Some village</city>
             <country>China</country>
         </address>
+
+        <email>
+            <type>work</type>
+            <value>winslow@vetclinic.com</value>
+        </email>
+    
 
         <note>Quack's biological father.</note>
         <note>My fav character, btw.</note>
@@ -114,7 +125,12 @@
             <country>Unknown</country>
         </address>
 
-        <note>Quack's crazy mom.</note>
+        <personalized-contact>
+            <service>Discord</service>
+            <value>Jiyang42335</value>
+        </personalized-contact>
+
+        <note>Quack's mom.</note>
     </record>
 
 </contacts>

@@ -1,7 +1,7 @@
 <!-- wrong email, missing @ and wrong url-->
 
 <contacts xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:noNamespaceSchemaLocation="..\contacts.xsd">
+    xsi:noNamespaceSchemaLocation="../contacts.xsd">
 
     <record>
         <name>
@@ -9,7 +9,6 @@
             <firstname>Denisa</firstname>
             <middlename>Cecília</middlename>
         </name>
-
 
         <address>
             <street>Fialková</street>
@@ -20,8 +19,8 @@
         </address>
 
         <phone>
-            <type>not</type>
-            <value>+4242424242424242</value>
+            <type>personal</type>
+            <value>+424242424242</value>
         </phone>
 
         <email>
@@ -35,10 +34,6 @@
             <service>Discord</service>
             <value>-</value>
         </personalized-contact>
-
-        <note>Dopísala pesničku, na ktorej pracovala rok. Yay.</note>
-        <note>Posunul sa jej spánkový režim a chodí spať o tretej. Not yay.</note>
-        <note>Tri týždne dozadu začala pozerať Agents of Shield a už je na šiestej sérii.</note>
     </record>
 
 </contacts>
