@@ -1,95 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
 <xsl:transform version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
 
     <xsl:output 
         method="html" 
         encoding="UTF-8" 
         indent="yes" 
-        doctype-public="-//W3C//DTD HTML 4.01//EN" 
         doctype-system="http://www.w3.org/TR/html4/strict.dtd"/>
 
 
     <xsl:template match="/contacts">
         <html>
             <head>
-                <style type="text/css">
-                    <![CDATA[
-body {
-    min-width: 40em;
-    margin: auto;
-    background-color: #6688B0;
-    font-family: sans-serif, serif;
-    color: #000000;
-}
+                <meta name="language" content="SK"/>
+                <meta name="description" content="Zoznam kontaktov obsahujúci mená, adresy a rôzne kontakty."/>
+                <meta name="keywords" content="zoznam,kontakty,adresy,telefón,email"/>
+                <meta name="author" content="Denisa Rudincová, 524996@mail.muni.cz"></meta>
 
-#zahlavie {
-    position: relative;
-    top: 0em;
-    min-width: 40em;
-    max-width: 50em;
-    height: 5em;
-    margin: 0em auto;
-    padding: 1em;
-    background-color: #0F084B;
-    color: #FFFFFF;
-}
-
-#obsah {
-    position: relative;
-    min-width: 40em;
-    max-width: 52em;
-    margin: 0em auto;
-    padding: 1em 0em;
-    background-color: #A6CFD5;
-    color: #000000;
-}
-
-#text {
-    padding: 0em 1em;
-}
-
-a {
-    color: #26408B;
-}
-
-a:hover {
-    color: #0F084B;
-}
-
-h1 {
-    letter-spacing: 8px;
-}
-
-h3 {
-    margin: 0.5em 0em 0em 0em;
-    color: #0F084B;
-}
-
-.record {
-    padding: 0em 0.5em;
-    background-color: #A6CFD5;
-    color: #000000;
-    border-bottom: 10px double #0f084b;
-}
-
-div.value {
-    text-indent: 1em;
-}
-
-.label {
-    font-weight: bold;
-}
-
-.notes li {
-    margin: 0.5em 2.5em 0.5em 0.5em;
-}
-
-.address {
-    margin: 0.5em 0.5em 1em 1em;
-}
-                    ]]>
-                </style>
-
+                <link rel="stylesheet" type="text/css" href="style.css" />
                 <title>Kontakty</title>
             </head>
 
@@ -112,41 +40,75 @@ div.value {
     <xsl:template match="record">
         <div class="record">
             <xsl:apply-templates select="name"/>
-            <ul>
-                <li>
-                    <h4>Adresy</h4>
-                    <xsl:apply-templates select="address"/>
-                </li>
-                <li>
-                    <h4>Telefónne čísla</h4>
-                    <xsl:apply-templates select="phone"/>
-                </li>
-                <li>
-                    <h4>E-maily</h4>
-                    <xsl:apply-templates select="email"/>
-                </li>
-                <li>
-                    <h4>Weby</h4>
-                    <xsl:apply-templates select="web"/>
-                </li>
-                <li>
-                    <h4>Iné kontakty</h4>
-                    <xsl:apply-templates select="personalized-contact"/>
-                </li>
-                <li>
-                    <h4>Poznámky</h4>
-                    <div class="notes">
+        <xsl:choose>
+            <xsl:when test="address or phone or email or web or personalized-contact or note">
                     <ul>
-                    <xsl:for-each select="note">
-                        <li>
-                        <xsl:value-of select="."/>
-                        </li>
-                    </xsl:for-each>
+                        <xsl:choose>
+                            <xsl:when test="address">
+                                <li>
+                                    <h4>Adresy</h4>
+                                    <xsl:apply-templates select="address"/>
+                                </li>
+                            </xsl:when>
+                        </xsl:choose>
+
+                        <xsl:choose>
+                            <xsl:when test="phone">
+                                <li>
+                                    <h4>Telefónne čísla</h4>
+                                    <xsl:apply-templates select="phone"/>
+                                </li>
+                            </xsl:when>
+                        </xsl:choose>
+
+                        <xsl:choose>
+                            <xsl:when test="email">
+                                <li>
+                                    <h4>E-mailové adresy</h4>
+                                    <xsl:apply-templates select="email"/>
+                                </li>
+                            </xsl:when>
+                        </xsl:choose>
+
+                        <xsl:choose>
+                            <xsl:when test="web">
+                                <li>
+                                    <h4>Weby</h4>
+                                    <xsl:apply-templates select="web"/>
+                                </li>
+                            </xsl:when>
+                        </xsl:choose>
+
+                        <xsl:choose>
+                            <xsl:when test="personalized-contact">
+                                <li>
+                                    <h4>Iné kontakty</h4>
+                                    <xsl:apply-templates select="personalized-contact"/>
+                                </li>
+                            </xsl:when>
+                        </xsl:choose>
+
+                        <xsl:choose>
+                            <xsl:when test="note">
+                                <li>
+                                    <h4>Poznámky</h4>
+                                    <div class="notes">
+                                    <ul>
+                                    <xsl:for-each select="note">
+                                        <li>
+                                        <xsl:value-of select="."/>
+                                        </li>
+                                    </xsl:for-each>
+                                    </ul>
+                                    </div>
+                                </li>
+                            </xsl:when>
+                        </xsl:choose>
                     </ul>
-                    </div>
-                </li>
-            </ul>
-        </div>
+
+            </xsl:when>
+        </xsl:choose>
+    </div>
     </xsl:template>
 
     <xsl:template match="name">
