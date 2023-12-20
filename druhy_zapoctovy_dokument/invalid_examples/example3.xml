@@ -15,7 +15,7 @@
             <house-number>42</house-number>
             <zipcode>424242</zipcode>
             <city>Lentilkovo</city>
-            <country>Tvoja mamka</country>
+            <country>Slovensko</country>
         </address>
 
         <phone>
@@ -38,12 +38,13 @@
             <value>denisa.rudinec@gmail.com</value>
         </email>
 
-        <web>https://tvojamamka.sk</web>
+        <web>https://idkkflmln.sk</web>
 
         <personalized-contact>
             <service>Discord</service>
             <value>-</value>
         </personalized-contact>
+
     </record>
 
 </contacts>
